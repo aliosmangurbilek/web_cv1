@@ -1,16 +1,16 @@
 ---
 # Display name
-title: 吳健雄
+title: Ali Osman Alperen Gürbilek
 
 # Name pronunciation (optional)
-name_pronunciation: Chien Shiung Wu
+name_pronunciation: Ali Osman Alperen Gürbilek
 
 # Full name (for SEO)
-first_name: Shiung Wu
-last_name: Chien
+first_name: Ali Osman Alperen
+last_name: Gürbilek
 
 # Pronouns (optional)
-pronouns: she/her
+pronouns: he/him
 
 # Status emoji
 status:
@@ -20,156 +20,169 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: Director of Cloud Infrastructure
+role: AI/ML • Data Systems • Backend
 
-# Organizations/Affiliations to display in Biography blox
+# Organizations/Affiliations to display in Biography block
 organizations:
-  - name: GenCoin
-    url: https://www.example.com/
+  - name: Autodidactic Technologies (Part-time)
+    url: https://#
+  - name: KTO Karatay Üniversitesi (Bilgisayar Mühendisliği)
+    url: https://www.karatay.edu.tr/
+  - name: University of Molise (Erasmus)
+    url: https://www.unimol.it/
 
 # Social network links
-# Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
-    url: 'mailto:your-email@example.com'
-    label: E-mail Me
-  - icon: brands/x
-    url: https://twitter.com/GetResearchDev
+    url: 'mailto:ali.osman.alperen.gurbilek@ogrenci.karatay.edu.tr'
+    label: E-posta
   - icon: brands/github
-    url: https://github.com/gcushen
+    url: https://github.com/aliosmangurbilek
   - icon: brands/linkedin
-    url: https://www.linkedin.com/
-  - icon: brands/instagram
-    url: https://www.instagram.com/
+    url: https://www.linkedin.com/in/ali-osman-alperen
+  - icon: globe
+    url: https://aliosmangurbilek.online
+    label: Website
 
+# Education
 education:
-  - area: PhD Artificial Intelligence
-    institution: Stanford University
-    date_start: 2016-01-01
-    date_end: 2020-12-31
-    summary: |
-      Thesis on _Why LLMs are awesome_. Supervised by [Prof Joe Smith](https://example.com). Presented papers at 5 IEEE conferences with the contributions being published in 2 Springer journals.
-    button:
-      text: 'Read Thesis'
-      url: 'https://example.com'
-  - area: MEng Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    date_start: 2016-01-01
-    date_end: 2020-12-31
-    summary: |
-      GPA: 3.8/4.0
+  - area: Bilgisayar Mühendisliği (GPA 3.20)
+    institution: KTO Karatay Üniversitesi
+    date_start: 2023-02-01
+    date_end: ''
+    summary: >
+      Yapay zeka, doğal dil işleme ve veritabanı sistemlerine odaklanma.
+  - area: Erasmus – Bilgisayar Mühendisliği
+    institution: University of Molise
+    date_start: 2024-10-01
+    date_end: 2025-02-28
+    summary: >
+      Isernia, İtalya’da dönemlik değişim programı.
+  - area: Elektrik ve Elektronik Mühendisliği
+    institution: KTO Karatay Üniversitesi
+    date_start: 2021-09-01
+    date_end: 2023-02-01
+    summary: ''
 
-      Courses included:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - area: BSc Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    date_start: 2016-01-01
-    date_end: 2020-12-31
-    summary: |
-      GPA: 3.4/4.0
-      
-      Courses included:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
+# Work Experience
 work:
-  - position: Director of Cloud Infrastructure
-    company_name: GenCoin
+  - position: Yarı Zamanlı Çalışan
+    company_name: Autodidactic Technologies
     company_url: ''
     company_logo: ''
-    date_start: 2021-01-01
+    date_start: 2023-11-01
     date_end: ''
     summary: |2-
-      Responsibilities include:
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - position: Backend Software Engineer
-    company_name: X
+      - AI ve veri projelerinde aktif geliştirme
+      - Python, FastAPI, PostgreSQL, Docker ile servisler
+  - position: Gönüllü Stajyer
+    company_name: İstanbul Grand Airport (IGA)
     company_url: ''
     company_logo: ''
-    date_start: 2016-01-01
-    date_end: 2020-12-31
-    summary: |
-      Responsibilities include:
-      - Migrated infrastructure to a new data center
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
-      - lorem ipsum dolor sit amet, consectetur adipiscing elit
+    date_start: 2025-07-01
+    date_end: 2025-08-31
+    summary: |2-
+      - Event trigger + FastAPI worker ile NL→SQL veri asistanı geliştirme
+  - position: Stajyer
+    company_name: AlbarakaTech Global
+    company_url: ''
+    company_logo: ''
+    date_start: 2024-07-01
+    date_end: 2024-08-31
+    summary: |2-
+      - Çeklerde QR & MICR kod işleme için yapay zekâ
+  - position: Takım Kaptanı Yardımcısı
+    company_name: WaterMelon
+    company_url: ''
+    company_logo: ''
+    date_start: 2024-02-01
+    date_end: 2024-10-31
+    summary: |2-
+      - Python, TensorFlow, YOLO, SSD-MobileNet
+      - Raspberry Pi üzerinde AI uygulamaları
+  - position: Stajyer
+    company_name: EHSİM A.Ş.
+    company_url: ''
+    company_logo: ''
+    date_start: 2023-08-01
+    date_end: 2023-09-30
+    summary: |2-
+      - React Material Admin Dashboard üzerinde geliştirmeler
 
-# Skills
-# Add your own SVG icons to `assets/media/icons/`
+# Skills (use your theme’s icon set names)
 skills:
   - name: Technical Skills
     items:
       - name: Python
         description: ''
-        percent: 80
+        percent: 90
         icon: devicon/python
-      - name: RStudio
+      - name: TensorFlow
         description: ''
-        percent: 100
-        icon: devicon/rstudio
-      - name: PyTorch
+        percent: 80
+        icon: devicon/tensorflow
+      - name: FastAPI
         description: ''
-        percent: 40
-        icon: devicon/pytorch
+        percent: 80
+        icon: simpleicons/fastapi
+      - name: PostgreSQL
+        description: ''
+        percent: 75
+        icon: devicon/postgresql
+      - name: Docker
+        description: ''
+        percent: 75
+        icon: devicon/docker
+      - name: LangChain & pgvector
+        description: ''
+        percent: 70
+        icon: academic-cap
   - name: Hobbies
     color: '#eeac02'
     color_border: '#f0bf23'
     items:
-      - name: Hiking
+      - name: Bisiklet
         description: ''
         percent: 60
         icon: person-simple-walk
-      - name: Cats
-        description: ''
-        percent: 100
-        icon: cat
-      - name: Photography
+      - name: Kamp
         description: ''
         percent: 80
-        icon: camera
+        icon: tent
+      - name: Yemek yapmak
+        description: ''
+        percent: 70
+        icon: bowl-chopsticks
 
+# Languages
 languages:
-  - name: English
+  - name: Türkçe
     percent: 100
-  - name: Chinese
-    percent: 75
-  - name: Portuguese
-    percent: 25
+  - name: İngilizce (B2)
+    percent: 70
 
-# Awards.
-#   Add/remove as many awards below as you like.
-#   Only `title`, `awarder`, and `date` are required.
-#   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
+# Awards / Achievements
 awards:
-  - title: Neural Networks and Deep Learning
-    url: https://www.coursera.org/learn/neural-networks-deep-learning
-    date: '2023-11-25'
-    awarder: Coursera
-    icon: coursera
+  - title: TEKNOFEST Türkiye 2.si
+    url: https://#
+    date: '2024-09-01'
+    awarder: TEKNOFEST (TÜBİTAK & Baykar)
+    icon: trophy
     summary: |
-      I studied the foundational concept of neural networks and deep learning. By the end, I was familiar with the significant technological trends driving the rise of deep learning; build, train, and apply fully connected deep neural networks; implement efficient (vectorized) neural networks; identify key parameters in a neural network’s architecture; and apply deep learning to your own applications.
-  - title: Blockchain Fundamentals
-    url: https://www.edx.org/professional-certificate/uc-berkeleyx-blockchain-fundamentals
-    date: '2023-07-01'
-    awarder: edX
-    icon: edx
+      “Beklemesin Kimse” projesi: SSD/YOLO ile anlık doluluk tespiti, Firebase ile mobil/web yayını.
+  - title: Erasmus Değişim Programı
+    url: https://www.unimol.it/
+    date: '2024-10-01'
+    awarder: University of Molise
+    icon: graduation-cap
     summary: |
-      Learned:
-      - Synthesize your own blockchain solutions
-      - Gain an in-depth understanding of the specific mechanics of Bitcoin
-      - Understand Bitcoin’s real-life applications and learn how to attack and destroy Bitcoin, Ethereum, smart contracts and Dapps, and alternatives to Bitcoin’s Proof-of-Work consensus algorithm
-  - title: 'Object-Oriented Programming in R'
-    url: https://www.datacamp.com/courses/object-oriented-programming-with-s3-and-r6-in-r
-    certificate_url: https://www.datacamp.com
-    date: '2023-01-21'
-    awarder: datacamp
-    icon: datacamp
-    summary: |
-      Object-oriented programming (OOP) lets you specify relationships between functions and the objects that they can act on, helping you manage complexity in your code. This is an intermediate level course, providing an introduction to OOP, using the S3 and R6 systems. S3 is a great day-to-day R programming tool that simplifies some of the functions that you write. R6 is especially useful for industry-specific analyses, working with web APIs, and building GUIs.
----
+      Isernia/İtalya’da dönemlik değişim.
 
-I am currently Director of Cloud Infrastructure at GenCoin where I am leading teams on edge computing, deep sea data center architecture, and hivemind optimization.
+---
+AI/ML ve veri odaklı sistemler geliştiriyorum. Gerçek zamanlı veri akışları, NL→SQL asistanları ve simülasyon tabanlı yapay zekâ ilgi alanlarım. Üretime yakın Python/Backend + AI projeleri; veri işleme, modelleme ve devreye alma (Docker) konusunda aktifim.
+
+**Öne çıkan projeler:**
+- **Kehanet** — NumPy ile sıfırdan NN kütüphanesi, MNIST > 98%; Flask REST & Docker.
+- **Akıllı Veri Asistanı (NL→SQL)** — PostgreSQL event trigger + FastAPI worker; LangChain & pgvector; SSE ve Vega-Lite.
+- **FIVE-ML (HARPA)** — HAVELSAN iş birliği; Decision Tree ile açıklanabilirlik; folium haritalar.
+- **Beklemesin Kimse** — SSD/YOLO ile yolcu algılama; Firebase ile anlık doluluk; **TEKNOFEST Türkiye 2.si**.
