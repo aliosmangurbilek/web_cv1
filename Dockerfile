@@ -1,7 +1,7 @@
 FROM nginx:1.27-alpine
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY aliosman_suit.png /usr/share/nginx/html/aliosman_suit.png
+COPY aliosman_suit_v2.jpg /usr/share/nginx/html/aliosman_suit_v2.jpg
 COPY index.html /usr/share/nginx/html/index.html
 COPY index-tr.html /usr/share/nginx/html/index-tr.html
 COPY resume.html /usr/share/nginx/html/resume.html
