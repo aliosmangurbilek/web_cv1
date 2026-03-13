@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ali Osman Alperen G&uuml;rbilek | Resume</title>
+    <style>
+      :root {
+        --paper: #fffdf8;
+        --ink: #18241e;
+        --muted: #5f6a63;
+        --line: rgba(24, 36, 30, 0.14);
+        --accent: #245848;
+        --accent-soft: rgba(36, 88, 72, 0.08);
+        --display: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+        --body: "Trebuchet MS", "Gill Sans", "Avenir Next", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: var(--body);
+        color: var(--ink);
+        background: #efe8dd;
+      }
+
+      main {
+        width: min(calc(100% - 2rem), 920px);
+        margin: 2rem auto;
+        padding: 2rem;
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: var(--paper);
+        box-shadow: 0 20px 60px rgba(20, 30, 24, 0.08);
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        align-items: flex-start;
+        padding-bottom: 1.4rem;
+        border-bottom: 1px solid var(--line);
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        font-family: var(--display);
+      }
+
+      h1 {
+        font-size: clamp(2.2rem, 6vw, 3.5rem);
+        line-height: 1;
+      }
+
+      .role {
+        margin-top: 0.5rem;
+        color: var(--accent);
+        font-weight: 700;
+      }
+
+      .contact {
+        display: grid;
+        gap: 0.35rem;
+        color: var(--muted);
+        font-size: 0.96rem;
+        text-align: right;
+      }
+
+      section {
+        margin-top: 1.7rem;
+      }
+
+      h2 {
+        margin-bottom: 0.7rem;
+        font-size: 1.35rem;
+      }
+
+      p,
+      li {
+        line-height: 1.6;
+      }
+
+      ul {
+        margin: 0.55rem 0 0;
+        padding-left: 1.1rem;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
+      .card {
+        padding: 1rem;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--accent-soft);
+      }
+
+      .entry + .entry {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--line);
+      }
+
+      .entry-header {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        align-items: baseline;
+      }
+
+      .entry-meta {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+      }
+
+      .tag-row span {
+        padding: 0.4rem 0.7rem;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        font-size: 0.92rem;
+      }
+
+      .back-link {
+        display: inline-block;
+        margin-top: 1.8rem;
+        color: var(--accent);
+        font-weight: 700;
+      }
+
+      @media (max-width: 720px) {
+        main {
+          width: min(calc(100% - 1rem), 920px);
+          padding: 1.2rem;
+          margin: 0.5rem auto;
+          border-radius: 18px;
+        }
+
+        .topbar,
+        .entry-header,
+        .grid {
+          grid-template-columns: 1fr;
+          display: grid;
+        }
+
+        .contact {
+          text-align: left;
+        }
+      }
+
+      @media print {
+        body {
+          background: #fff;
+        }
+
+        main {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          border: 0;
+          border-radius: 0;
+          box-shadow: none;
+        }
+
+        .back-link {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="topbar">
+        <div>
+          <h1>Ali Osman Alperen G&uuml;rbilek</h1>
+          <p class="role">AI Engineer | Backend Systems | Data Products</p>
+        </div>
+        <div class="contact">
+          <span>Istanbul, Turkey</span>
+          <a href="mailto:aliosmangurbil@gmail.com">aliosmangurbil@gmail.com</a>
+          <a href="https://github.com/aliosmangurbilek">github.com/aliosmangurbilek</a>
+          <a href="https://www.linkedin.com/in/ali-osman-alperen">linkedin.com/in/ali-osman-alperen</a>
+        </div>
+      </div>
+
+      <section>
+        <h2>Profile</h2>
+        <p>
+          Computer Engineering student and working AI engineer focused on production-oriented AI services, backend
+          systems, and data products. Strongest fit is in roles where machine learning needs to become a reliable
+          service, workflow, or product feature.
+        </p>
+      </section>
+
+      <section class="grid">
+        <div class="card">
+          <h2>Highlights</h2>
+          <ul>
+            <li>DevOps and AI Engineer at Autodidactic Technologies since November 2023</li>
+            <li>TEKNOFEST Turkey 2nd place in AI and computer vision</li>
+            <li>Erasmus exchange student at the University of Molise in Italy</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Core Stack</h2>
+          <div class="tag-row">
+            <span>Python</span>
+            <span>FastAPI</span>
+            <span>PostgreSQL</span>
+            <span>Docker</span>
+            <span>Linux</span>
+            <span>LangChain</span>
+            <span>pgvector</span>
+            <span>TensorFlow</span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Experience</h2>
+
+        <div class="entry">
+          <div class="entry-header">
+            <h3>DevOps and AI Engineer - Autodidactic Technologies</h3>
+            <span class="entry-meta">Nov 2023 - Present</span>
+          </div>
+          <ul>
+            <li>Build and containerize AI services with Docker and FastAPI.</li>
+            <li>Design PostgreSQL-backed backend flows for production-oriented systems.</li>
+            <li>Work on deployment, service structure, and API scaling in Linux environments.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <h3>Volunteer Intern - Istanbul Grand Airport</h3>
+            <span class="entry-meta">Jul 2025 - Aug 2025</span>
+          </div>
+          <ul>
+            <li>Built a natural-language-to-SQL data assistant for operational workflows.</li>
+            <li>Worked with event-driven data handling and FastAPI worker processes.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <h3>Intern and Team Leadership Roles</h3>
+            <span class="entry-meta">2024</span>
+          </div>
+          <ul>
+            <li>Worked on AI solutions for QR and MICR code processing on checks.</li>
+            <li>Helped lead Raspberry Pi based computer vision development in the TEKNOFEST project.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <h3>Frontend Intern - EHSIM A.S.</h3>
+            <span class="entry-meta">Aug 2023 - Sep 2023</span>
+          </div>
+          <ul>
+            <li>Built features on top of a React Material Admin Dashboard.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Selected Projects</h2>
+
+        <div class="entry">
+          <div class="entry-header">
+            <h3>Akilli Veri Asistani</h3>
+            <span class="entry-meta">Data assistant</span>
+          </div>
+          <ul>
+            <li>Natural-language-to-SQL assistant using PostgreSQL event triggers and FastAPI workers.</li>
+            <li>Retrieval workflow built with LangChain and pgvector.</li>
+            <li>SSE streaming and Vega-Lite visualization for live responses.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <h3>Kehanet</h3>
+            <span class="entry-meta">ML foundations</span>
+          </div>
+          <ul>
+            <li>Built a neural network library from scratch with NumPy.</li>
+            <li>Reached 98%+ accuracy on MNIST.</li>
+            <li>Exposed it as a Flask REST API and packaged it in Docker.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <h3>Beklemesin Kimse</h3>
+            <span class="entry-meta">Computer vision</span>
+          </div>
+          <ul>
+            <li>Passenger detection and occupancy tracking with SSD and YOLO models.</li>
+            <li>Firebase-powered live occupancy updates for web and mobile.</li>
+            <li>Awarded 2nd place in TEKNOFEST Turkey.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="grid">
+        <div class="card">
+          <h2>Education</h2>
+          <ul>
+            <li>KTO Karatay University - Computer Engineering, GPA 3.23 / 4.00</li>
+            <li>University of Molise - Erasmus exchange in Computer Engineering</li>
+            <li>KTO Karatay University - Electrical and Electronics Engineering</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>Languages</h2>
+          <ul>
+            <li>Turkish - Native</li>
+            <li>English - B2</li>
+          </ul>
+        </div>
+      </section>
+
+      <a class="back-link" href="index.html">Back to portfolio page</a>
+    </main>
+  </body>
+</html>

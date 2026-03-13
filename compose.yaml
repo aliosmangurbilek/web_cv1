@@ -1,0 +1,9 @@
+services:
+  web-cv:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: web-cv
+    ports:
+      - "1313:1313"
+    restart: unless-stopped
