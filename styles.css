@@ -107,16 +107,16 @@ li {
 }
 
 .brand-mark {
-  display: grid;
-  place-items: center;
-  width: 2.6rem;
-  height: 2.6rem;
+  display: block;
+  width: 2.85rem;
+  height: 2.85rem;
   border-radius: 50%;
+  object-fit: cover;
+  object-position: center 16%;
+  flex-shrink: 0;
+  border: 2px solid rgba(255, 255, 255, 0.72);
   background: linear-gradient(135deg, var(--accent-alt), var(--bg-deep));
-  color: #fff7ee;
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  box-shadow: 0 8px 22px rgba(16, 34, 27, 0.16);
 }
 
 .brand-text {

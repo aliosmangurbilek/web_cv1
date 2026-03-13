@@ -135,6 +135,27 @@
         font-size: 0.92rem;
       }
 
+      .project-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin-top: 0.9rem;
+      }
+
+      .project-link {
+        display: inline-flex;
+        align-items: center;
+        max-width: 100%;
+        padding: 0.45rem 0.78rem;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: var(--accent);
+        font-size: 0.92rem;
+        font-weight: 700;
+        overflow-wrap: anywhere;
+      }
+
       .back-link {
         display: inline-block;
         margin-top: 1.8rem;
@@ -291,6 +312,11 @@
             <li>Retrieval workflow built with LangChain and pgvector.</li>
             <li>SSE streaming and Vega-Lite visualization for live responses.</li>
           </ul>
+          <div class="project-links">
+            <a class="project-link" href="https://agent.aliosmangurbilek.online" target="_blank" rel="noreferrer">
+              Live site
+            </a>
+          </div>
         </div>
 
         <div class="entry">
@@ -303,6 +329,11 @@
             <li>Reached 98%+ accuracy on MNIST.</li>
             <li>Exposed it as a Flask REST API and packaged it in Docker.</li>
           </ul>
+          <div class="project-links">
+            <a class="project-link" href="https://avatar.aliosmangurbilek.online" target="_blank" rel="noreferrer">
+              Live site
+            </a>
+          </div>
         </div>
 
         <div class="entry">

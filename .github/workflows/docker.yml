@@ -18,6 +18,7 @@ jobs:
 
       - name: Check required static files
         run: |
+          test -f aliosman_suit.png
           test -f index.html
           test -f index-tr.html
           test -f resume.html
