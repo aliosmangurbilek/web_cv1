@@ -30,9 +30,49 @@
     }, 220);
   }
 
+  function wireLanguageNotice(notice) {
+    if (!notice || notice.dataset.wired === "true") {
+      return;
+    }
+
+    notice.dataset.wired = "true";
+
+    const closeButton = notice.querySelector(".language-notice-close");
+    const secondaryButton = notice.querySelector(".language-notice-secondary");
+    const primaryLink = notice.querySelector(".language-notice-primary");
+
+    if (primaryLink) {
+      primaryLink.addEventListener("click", () => {
+        rememberLanguage("tr");
+      });
+    }
+
+    if (closeButton) {
+      closeButton.addEventListener("click", () => {
+        rememberLanguage("en");
+        closeLanguageNotice(notice);
+      });
+    }
+
+    if (secondaryButton) {
+      secondaryButton.addEventListener("click", () => {
+        rememberLanguage("en");
+        closeLanguageNotice(notice);
+      });
+    }
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && document.body.contains(notice)) {
+        rememberLanguage("en");
+        closeLanguageNotice(notice);
+      }
+    });
+  }
+
   function createLanguageNotice() {
     const notice = document.createElement("aside");
     notice.className = "language-notice";
+    notice.id = "language-notice";
     notice.setAttribute("role", "dialog");
     notice.setAttribute("aria-labelledby", "language-notice-title");
     notice.setAttribute("aria-live", "polite");
@@ -68,37 +108,7 @@
     `;
 
     document.body.appendChild(notice);
-
-    const closeButton = notice.querySelector(".language-notice-close");
-    const secondaryButton = notice.querySelector(".language-notice-secondary");
-    const primaryLink = notice.querySelector(".language-notice-primary");
-
-    if (primaryLink) {
-      primaryLink.addEventListener("click", () => {
-        rememberLanguage("tr");
-      });
-    }
-
-    if (closeButton) {
-      closeButton.addEventListener("click", () => {
-        rememberLanguage("en");
-        closeLanguageNotice(notice);
-      });
-    }
-
-    if (secondaryButton) {
-      secondaryButton.addEventListener("click", () => {
-        rememberLanguage("en");
-        closeLanguageNotice(notice);
-      });
-    }
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape" && document.body.contains(notice)) {
-        rememberLanguage("en");
-        closeLanguageNotice(notice);
-      }
-    });
+    wireLanguageNotice(notice);
 
     requestAnimationFrame(() => {
       notice.classList.add("is-visible");
@@ -107,6 +117,13 @@
 
   function maybeShowLanguageNotice() {
     if (pageLanguage !== "en") {
+      return;
+    }
+
+    const existingNotice = document.getElementById("language-notice");
+
+    if (existingNotice) {
+      wireLanguageNotice(existingNotice);
       return;
     }
 
