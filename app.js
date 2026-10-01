@@ -1,39 +1,54 @@
 (() => {
-  function closeLanguageNotice(notice) {
-    notice.classList.remove("is-visible");
-    window.setTimeout(() => {
-      notice.hidden = true;
-    }, 220);
-  }
+  function initSpatialCards() {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const precisePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
 
-  function initLanguageNotice() {
-    const notice = document.getElementById("language-notice");
-
-    if (!notice) {
+    if (reducedMotion.matches || !precisePointer.matches) {
       return;
     }
 
-    const closeButton = notice.querySelector(".language-notice-close");
-    const secondaryButton = notice.querySelector(".language-notice-secondary");
+    const cards = document.querySelectorAll(
+      ".hero-copy, .focus-panel, .summary-card, .timeline-card, .project-card, .stack-card, .contact-card"
+    );
 
-    if (closeButton) {
-      closeButton.addEventListener("click", () => {
-        closeLanguageNotice(notice);
-      });
-    }
+    cards.forEach((card) => {
+      let frame = null;
 
-    if (secondaryButton) {
-      secondaryButton.addEventListener("click", () => {
-        closeLanguageNotice(notice);
-      });
-    }
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape" && !notice.hidden) {
-        closeLanguageNotice(notice);
+      if (card.classList.contains("reveal")) {
+        card.addEventListener("animationend", () => card.classList.remove("reveal"), { once: true });
       }
+
+      const updateTilt = (event) => {
+        const bounds = card.getBoundingClientRect();
+        const pointerX = (event.clientX - bounds.left) / bounds.width;
+        const pointerY = (event.clientY - bounds.top) / bounds.height;
+        const rotateX = (0.5 - pointerY) * 6;
+        const rotateY = (pointerX - 0.5) * 6;
+
+        if (frame) {
+          window.cancelAnimationFrame(frame);
+        }
+
+        frame = window.requestAnimationFrame(() => {
+          card.style.setProperty("--tilt-x", `${rotateX.toFixed(2)}deg`);
+          card.style.setProperty("--tilt-y", `${rotateY.toFixed(2)}deg`);
+          card.style.setProperty("--glare-x", `${(pointerX * 100).toFixed(1)}%`);
+          card.style.setProperty("--glare-y", `${(pointerY * 100).toFixed(1)}%`);
+        });
+      };
+
+      card.classList.add("spatial-card");
+      card.addEventListener("pointerenter", () => card.classList.add("is-tilting"));
+      card.addEventListener("pointermove", updateTilt);
+      card.addEventListener("pointerleave", () => {
+        card.classList.remove("is-tilting");
+        card.style.setProperty("--tilt-x", "0deg");
+        card.style.setProperty("--tilt-y", "0deg");
+        card.style.setProperty("--glare-x", "50%");
+        card.style.setProperty("--glare-y", "50%");
+      });
     });
   }
 
-  initLanguageNotice();
+  initSpatialCards();
 })();

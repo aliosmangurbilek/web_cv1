@@ -1,5 +1,8 @@
 FROM nginx:1.27-alpine
 
+RUN rm -f /var/log/nginx/access.log \
+  && touch /var/log/nginx/access.log
+
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY aliosman_suit_v2.jpg /usr/share/nginx/html/aliosman_suit_v2.jpg
 COPY index.html /usr/share/nginx/html/index.html

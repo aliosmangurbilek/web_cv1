@@ -1,19 +1,44 @@
 :root {
-  --bg: #f7f1e8;
-  --bg-deep: #10221b;
+  /* DESIGN.md — Warm Systems Portfolio tokens */
+  --color-primary: #10221b;
+  --color-on-primary: #fff9f0;
+  --color-secondary: #2d6656;
+  --color-accent: #bd6c3d;
+  --color-background: #f7f1e8;
+  --color-surface: #fffaf4;
+  --color-text: #17261f;
+  --color-muted: #5e6a62;
+  --color-border: rgba(23, 38, 31, 0.12);
+
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 4rem;
+
+  --design-radius-sm: 14px;
+  --design-radius-md: 20px;
+  --design-radius-lg: 28px;
+  --radius-pill: 999px;
+
+  /* Compatibility aliases for the existing components. */
+  --bg: var(--color-background);
+  --bg-deep: var(--color-primary);
   --surface: rgba(255, 251, 245, 0.78);
-  --surface-strong: #fffaf4;
+  --surface-strong: var(--color-surface);
   --surface-dark: rgba(16, 34, 27, 0.92);
-  --text: #17261f;
-  --muted: #5e6a62;
-  --line: rgba(23, 38, 31, 0.12);
-  --accent: #bd6c3d;
+  --text: var(--color-text);
+  --muted: var(--color-muted);
+  --line: var(--color-border);
+  --accent: var(--color-accent);
   --accent-soft: rgba(189, 108, 61, 0.12);
-  --accent-alt: #2d6656;
+  --accent-alt: var(--color-secondary);
   --shadow: 0 18px 60px rgba(21, 30, 25, 0.12);
-  --radius-xl: 28px;
-  --radius-lg: 20px;
-  --radius-md: 14px;
+  --shadow-hover: 0 24px 70px rgba(21, 30, 25, 0.16);
+  --radius-xl: var(--design-radius-lg);
+  --radius-lg: var(--design-radius-md);
+  --radius-md: var(--design-radius-sm);
   --max-width: 1180px;
   --body-font: "Trebuchet MS", "Gill Sans", "Avenir Next", sans-serif;
   --display-font: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
@@ -21,6 +46,11 @@
 
 * {
   box-sizing: border-box;
+}
+
+*:focus-visible {
+  outline: 3px solid rgba(189, 108, 61, 0.48);
+  outline-offset: 3px;
 }
 
 html {
@@ -282,7 +312,7 @@ li {
   margin-top: 1rem;
   padding: 0.95rem 1.2rem;
   border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: rgba(255, 248, 240, 0.72);
   backdrop-filter: blur(20px);
   box-shadow: 0 8px 34px rgba(20, 33, 26, 0.08);
@@ -316,6 +346,7 @@ li {
 
 .site-nav {
   display: inline-flex;
+  align-items: center;
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 1.2rem;
@@ -325,6 +356,12 @@ li {
 
 .site-nav a {
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.2rem;
+  padding-block: 0.38rem;
+  line-height: 1;
 }
 
 .site-nav a::after {
@@ -350,13 +387,9 @@ li {
 }
 
 .lang-pill {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 2.2rem;
-  padding: 0.38rem 0.72rem;
+  padding-inline: 0.72rem;
   border: 1px solid rgba(23, 38, 31, 0.12);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: rgba(255, 255, 255, 0.58);
   color: var(--accent-alt);
   font-size: 0.86rem;
@@ -387,6 +420,56 @@ li {
   background: var(--surface);
   backdrop-filter: blur(14px);
   box-shadow: var(--shadow);
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.spatial-card {
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
+  --glare-x: 50%;
+  --glare-y: 50%;
+  position: relative;
+  isolation: isolate;
+  transform: perspective(1100px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.spatial-card::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at var(--glare-x) var(--glare-y),
+    rgba(255, 255, 255, 0.38),
+    rgba(255, 255, 255, 0.08) 26%,
+    transparent 54%
+  );
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+
+.spatial-card.is-tilting::after {
+  opacity: 1;
+}
+
+.spatial-card > * {
+  position: relative;
+  z-index: 1;
+  transform: translateZ(12px);
+}
+
+.summary-card:hover,
+.project-card:hover,
+.stack-card:hover {
+  border-color: rgba(189, 108, 61, 0.24);
+  box-shadow: var(--shadow-hover);
 }
 
 .hero-copy {
@@ -445,7 +528,7 @@ li {
   max-width: 100%;
   min-height: 3rem;
   padding: 0.85rem 1.2rem;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   border: 1px solid transparent;
   font-weight: 700;
   transition:
@@ -461,7 +544,7 @@ li {
 
 .button-primary {
   background: linear-gradient(135deg, var(--bg-deep), var(--accent-alt));
-  color: #fff9f0;
+  color: var(--color-on-primary);
   box-shadow: 0 10px 26px rgba(16, 34, 27, 0.22);
 }
 
@@ -554,7 +637,7 @@ li {
   min-height: 2.3rem;
   padding: 0.55rem 0.9rem;
   border: 1px solid rgba(23, 38, 31, 0.1);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: rgba(255, 255, 255, 0.62);
   font-size: 0.93rem;
   color: var(--text);
@@ -607,6 +690,8 @@ li {
 .section-heading {
   max-width: 54rem;
   margin-bottom: 1.6rem;
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--line);
 }
 
 .section-heading h2 {
@@ -692,9 +777,20 @@ li {
 }
 
 .project-card {
+  position: relative;
+  overflow: hidden;
   min-height: 100%;
   padding: 1.3rem 1.2rem 1.45rem;
   border-radius: var(--radius-xl);
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--accent), var(--accent-alt));
+  opacity: 0.72;
 }
 
 .project-card p {
@@ -730,7 +826,7 @@ li {
   min-height: 2.55rem;
   padding: 0.65rem 0.95rem;
   border: 1px solid rgba(23, 38, 31, 0.12);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: rgba(255, 255, 255, 0.66);
   color: var(--accent-alt);
   font-size: 0.93rem;
@@ -818,7 +914,7 @@ li {
   max-width: 100%;
   padding: 0.7rem 0.95rem;
   border: 1px solid rgba(248, 243, 235, 0.14);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: rgba(255, 255, 255, 0.08);
   overflow-wrap: anywhere;
 }
@@ -899,6 +995,7 @@ li {
     display: flex;
     flex-wrap: nowrap;
     justify-content: flex-start;
+    align-items: center;
     gap: 0.5rem;
     overflow-x: auto;
     overscroll-behavior-x: contain;
@@ -977,8 +1074,30 @@ li {
   }
 
   .button,
-  .site-nav a::after {
+  .site-nav a::after,
+  .hero-copy,
+  .focus-panel,
+  .summary-card,
+  .timeline-card,
+  .project-card,
+  .stack-card,
+  .contact-card {
     transition: none;
+  }
+
+  .summary-card:hover,
+  .project-card:hover,
+  .stack-card:hover {
+    transform: none;
+  }
+
+  .spatial-card,
+  .spatial-card > * {
+    transform: none;
+  }
+
+  .spatial-card::after {
+    display: none;
   }
 
   .language-notice {

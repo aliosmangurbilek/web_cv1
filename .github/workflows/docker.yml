@@ -22,6 +22,7 @@ jobs:
           test -f index-tr.html
           test -f resume.html
           test -f styles.css
+          test -f DESIGN.md
           test -f Dockerfile
           test -f nginx.conf
 
@@ -31,6 +32,9 @@ jobs:
           grep -q "<title>" index-tr.html
           grep -q "Experience" index.html
           grep -q "<title>" resume.html
+
+      - name: Validate design system
+        run: npx --yes @google/design.md lint DESIGN.md
 
       - name: Build Docker image
         run: docker build -t web-cv:ci .
