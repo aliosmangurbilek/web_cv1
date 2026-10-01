@@ -2,6 +2,5 @@
 Thumbs.db
 .codex
 __pycache__/
-aliosman_suit_v2.jpg
 logs/*.log
 reports/*.json
